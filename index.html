@@ -13,8 +13,8 @@
 <style>
 :root{
   --bg:#f8f8f8;
-  --ink:#181818;
-  --ink-soft:#222;
+  --ink:#101c2d; /* midnight navy */
+  --ink-soft:#1c2f4a;
   --white:#fff;
   --indigo:#211f54;
   --radius:20px;
@@ -83,11 +83,11 @@ nav .btn{padding:9px 24px 11px;font-size:17px}
 /* buttons */
 .btn{
   display:inline-block;
-  background:#000;color:#fff;
-  border:1px solid #000;border-radius:9999px;
+  background:var(--ink);color:#fff;
+  border:1px solid var(--ink);border-radius:9999px;
   padding:10px 26px 12px;
   font-family:'Manrope',sans-serif;font-size:18px;font-weight:700;line-height:1.2;
-  text-decoration:none;text-transform:lowercase;
+  text-decoration:none;text-transform:lowercase;white-space:nowrap;
   transition:opacity .15s;
 }
 .btn:hover{opacity:.75}
@@ -173,6 +173,11 @@ footer .cols a{display:block;font-size:15px;text-decoration:none;margin-bottom:1
 footer .cols a:hover{opacity:.6}
 footer .fine{width:100%;text-align:center;margin-top:50px;font-size:13px;opacity:.55}
 
+@media(max-width:1280px){
+  nav{gap:22px}
+  nav a:not(.btn){font-size:16px}
+  nav .btn{font-size:16px;padding:8px 20px 10px}
+}
 @media(max-width:760px){
   nav{gap:16px;padding:8px 10px}
   nav a:not(.btn):not(.main){display:none}
@@ -204,6 +209,7 @@ footer .fine{width:100%;text-align:center;margin-top:50px;font-size:13px;opacity
 
 <header class="hero">
   <div class="wrap">
+    <img class="logo-px" src="logo-ink.svg" alt="monocorp" width="258" height="25" style="margin-bottom:38px">
     <h1><span class="it">label the motion</span> that<br>teaches machines</h1>
     <p>monocorp turns humanoid and egocentric data into ground truth — frame by frame, joint by joint — so your robots learn from the world the way people live in it.</p>
     <a class="btn" href="mailto:hello@monocorp.io">start a pilot</a>
@@ -213,7 +219,7 @@ footer .fine{width:100%;text-align:center;margin-top:50px;font-size:13px;opacity
         <line x1="60" y1="0" x2="60" y2="240" stroke="#211f54" stroke-width="1" opacity=".25"/>
         <line x1="460" y1="0" x2="460" y2="240" stroke="#211f54" stroke-width="1" opacity=".25"/>
         <!-- walking skeleton figure -->
-        <g stroke="#181818" stroke-width="2.5" stroke-linecap="round">
+        <g stroke="#101c2d" stroke-width="2.5" stroke-linecap="round">
           <circle cx="260" cy="60" r="16" fill="none"/>
           <line x1="260" y1="76" x2="260" y2="138"/>
           <line x1="260" y1="92" x2="228" y2="120"/>
@@ -335,7 +341,7 @@ footer .fine{width:100%;text-align:center;margin-top:50px;font-size:13px;opacity
 <footer>
   <div class="wrap">
     <div>
-      <p class="sig">monocorp</p>
+      <img class="logo-px" src="logo-ink.svg" alt="monocorp" width="155" height="15" style="margin-bottom:14px">
       <p>ground-truth labels for humanoid<br>&amp; egocentric data.</p>
     </div>
     <div class="cols">
