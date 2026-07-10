@@ -101,10 +101,15 @@ nav .btn{padding:10px 24px;font-size:17px;line-height:20px}
 .hero .wrap{width:100%;display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center}
 .hero h1{margin-bottom:34px}
 .hero p{margin:0 0 44px;max-width:46ch}
-.hero .figure{margin:0;max-width:460px;opacity:.92}
+.hero .figure{
+  margin:0;width:min(100%,520px);justify-self:end;
+  aspect-ratio:16/9;overflow:hidden;border-radius:8px;
+  background:#e4e7e8;
+}
+.hero .figure img{display:block;width:100%;height:100%;object-fit:cover}
 @media(max-width:900px){
   .hero .wrap{grid-template-columns:1fr}
-  .hero .figure{margin:40px auto 0}
+  .hero .figure{margin:40px auto 0;justify-self:center}
 }
 
 /* marquee */
@@ -121,6 +126,25 @@ nav .btn{padding:10px 24px;font-size:17px;line-height:20px}
 .mcard .num{font-family:'STIX Two Text',serif;font-style:italic;font-size:15px;color:var(--indigo)}
 .mcard .name{font-size:21px;font-weight:700;letter-spacing:-.3px}
 .mcard .desc{font-size:14px;line-height:20px;opacity:.65;letter-spacing:0}
+
+/* field footage */
+.field-gallery{padding:38px 5% 100px}
+.field-gallery .wrap{max-width:1120px}
+.gallery-group + .gallery-group{margin-top:46px}
+.gallery-label{
+  margin-bottom:14px;color:var(--indigo);
+  font-size:13px;font-weight:700;letter-spacing:.12em;line-height:1.2;
+}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.gallery-frame{
+  margin:0;aspect-ratio:16/9;overflow:hidden;border-radius:8px;
+  background:#e4e7e8;
+}
+.gallery-frame img{
+  display:block;width:100%;height:100%;object-fit:cover;
+  transition:transform .35s ease;
+}
+.gallery-frame:hover img{transform:scale(1.025)}
 
 /* text sections */
 .statement p{font-size:20px;margin-bottom:26px}
@@ -192,6 +216,13 @@ footer .fine{width:100%;text-align:center;margin-top:50px;font-size:13px;opacity
   .who{margin:0 3%;padding:70px 7%}
   section{padding:60px 6%}
   .marquee-zone{padding:34px 0 60px}
+  .field-gallery{padding:28px 6% 66px}
+  .gallery-group + .gallery-group{margin-top:34px}
+  .gallery-grid{grid-template-columns:1fr;gap:12px}
+}
+@media(min-width:761px) and (max-width:900px){
+  .gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .gallery-frame:last-child:nth-child(odd){grid-column:span 2}
 }
 </style>
 </head>
@@ -223,34 +254,7 @@ footer .fine{width:100%;text-align:center;margin-top:50px;font-size:13px;opacity
       <a class="btn" href="mailto:hello@monocorp.io">get a sample dataset</a>
     </div>
     <div class="figure">
-      <svg viewBox="0 0 520 240" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <line x1="0" y1="220" x2="520" y2="220" stroke="#211f54" stroke-width="1" opacity=".5"/>
-        <line x1="60" y1="0" x2="60" y2="240" stroke="#211f54" stroke-width="1" opacity=".25"/>
-        <line x1="460" y1="0" x2="460" y2="240" stroke="#211f54" stroke-width="1" opacity=".25"/>
-        <!-- walking skeleton figure -->
-        <g stroke="#101c2d" stroke-width="2.5" stroke-linecap="round">
-          <circle cx="260" cy="60" r="16" fill="none"/>
-          <line x1="260" y1="76" x2="260" y2="138"/>
-          <line x1="260" y1="92" x2="228" y2="120"/>
-          <line x1="260" y1="92" x2="294" y2="116"/>
-          <line x1="260" y1="138" x2="234" y2="190"/>
-          <line x1="234" y1="190" x2="240" y2="220"/>
-          <line x1="260" y1="138" x2="288" y2="184"/>
-          <line x1="288" y1="184" x2="306" y2="218"/>
-        </g>
-        <!-- keypoint dots -->
-        <g fill="#211f54">
-          <circle cx="260" cy="92" r="4"/><circle cx="228" cy="120" r="4"/><circle cx="294" cy="116" r="4"/>
-          <circle cx="260" cy="138" r="4"/><circle cx="234" cy="190" r="4"/><circle cx="288" cy="184" r="4"/>
-          <circle cx="240" cy="220" r="4"/><circle cx="306" cy="218" r="4"/>
-        </g>
-        <!-- annotation boxes -->
-        <g stroke="#211f54" stroke-width="1" opacity=".6" stroke-dasharray="4 4">
-          <rect x="218" y="36" width="100" height="196" rx="6" fill="none"/>
-        </g>
-        <text x="330" y="52" font-family="Manrope, sans-serif" font-size="12" fill="#211f54">rig_01 · kitchen · rec ●</text>
-        <text x="330" y="70" font-family="Manrope, sans-serif" font-size="12" fill="#211f54" opacity=".6">4 cams · imu · audio</text>
-      </svg>
+      <img src="assets/vlcsnap-2026-07-10-17h48m36s779.jpg" alt="First-person view of hands connecting a vehicle door wiring module" width="1600" height="900" fetchpriority="high">
     </div>
   </div>
 </header>
@@ -268,6 +272,27 @@ footer .fine{width:100%;text-align:center;margin-top:50px;font-size:13px;opacity
   <div class="wrap narrow">
     <h2>capture <span class="it">every kind</span> of motion</h2>
     <p style="margin-top:26px">we take on anything from a single scripted scenario to thousands of hours across multiple sites. if a human can do it, we can film it.</p>
+  </div>
+</section>
+
+<section class="field-gallery" aria-label="Examples of field capture">
+  <div class="wrap">
+    <div class="gallery-group">
+      <p class="gallery-label">auto service</p>
+      <div class="gallery-grid">
+        <figure class="gallery-frame"><img src="assets/vlcsnap-2026-07-10-17h47m55s581.jpg" alt="Hands holding a vehicle electrical module beside an open car" width="1600" height="900" loading="lazy" decoding="async"></figure>
+        <figure class="gallery-frame"><img src="assets/vlcsnap-2026-07-10-17h52m07s163.jpg" alt="First-person view of hands carrying two tires beside a vehicle" width="1600" height="900" loading="lazy" decoding="async"></figure>
+        <figure class="gallery-frame"><img src="assets/vlcsnap-2026-07-10-17h53m30s353.jpg" alt="Hands fitting a tire onto a rim at a tire machine" width="1600" height="900" loading="lazy" decoding="async"></figure>
+      </div>
+    </div>
+    <div class="gallery-group">
+      <p class="gallery-label">garment work</p>
+      <div class="gallery-grid">
+        <figure class="gallery-frame"><img src="assets/vlcsnap-2026-07-10-17h57m38s248.jpg" alt="A worker guiding patterned fabric through an industrial sewing machine" width="1600" height="900" loading="lazy" decoding="async"></figure>
+        <figure class="gallery-frame"><img src="assets/vlcsnap-2026-07-10-17h59m49s573.jpg" alt="Hands guiding fabric beneath a sewing machine needle" width="1600" height="900" loading="lazy" decoding="async"></figure>
+        <figure class="gallery-frame"><img src="assets/vlcsnap-2026-07-10-18h05m16s804.jpg" alt="Close first-person view of hands stitching white fabric at a sewing machine" width="1600" height="900" loading="lazy" decoding="async"></figure>
+      </div>
+    </div>
   </div>
 </section>
 
