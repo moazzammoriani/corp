@@ -101,14 +101,13 @@ nav .btn{padding:10px 24px;font-size:17px;line-height:20px}
 .hero h1{margin-bottom:34px}
 .hero p{margin:0 0 44px;max-width:46ch}
 .hero .figure{
-  margin:0;width:min(100%,520px);justify-self:end;
-  aspect-ratio:16/9;overflow:hidden;border-radius:8px;
-  background:#e4e7e8;
+  margin:0;width:min(100%,480px);justify-self:end;
 }
-.hero .figure img{display:block;width:100%;height:100%;object-fit:cover}
+.hero .figure img{display:block;width:100%;height:auto;max-height:680px;object-fit:contain}
 @media(max-width:900px){
   .hero .wrap{grid-template-columns:1fr}
-  .hero .figure{margin:40px auto 0;justify-self:center}
+  .hero .figure{margin:40px auto 0;width:min(82vw,420px);justify-self:center}
+  .hero .figure img{max-height:520px}
 }
 
 /* marquee */
@@ -237,7 +236,7 @@ footer .fine{width:100%;text-align:center;margin-top:50px;font-size:13px;opacity
 <nav>
   <a class="main" href="#">Main</a>
   <a href="#what">What We Capture</a>
-  <a class="btn" href="mailto:contact@monocorp.io">Get a Sample</a>
+  <a class="btn" href="https://docs.google.com/spreadsheets/d/1h-t-jSvczw0DinuoEKMpOfGeNjolZ3thMDTMM8MpgTs/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Get a Sample</a>
   <a href="#expect">How It Works</a>
   <a href="#faq">Questions</a>
 </nav>
@@ -246,12 +245,10 @@ footer .fine{width:100%;text-align:center;margin-top:50px;font-size:13px;opacity
   <div class="wrap">
     <div class="hero-copy">
       <img class="logo-px" src="logo-ink.svg" alt="Monocorp" width="258" height="25" style="margin-bottom:38px">
-      <h1><span class="it">We film the world</span><br>your robots learn from</h1>
-      <p>Monocorp partners with everyday workers who wear our cameras through their day. The footage ships as reviewed, organized first-person video for embodied AI teams.</p>
-      <a class="btn" href="mailto:contact@monocorp.io">Get a Sample</a>
+      <h1>The <span class="it">sensing</span> and <span class="it">data</span> layer for <span class="it">Physical AI</span></h1>
     </div>
     <div class="figure">
-      <img src="assets/vlcsnap-2026-07-10-17h48m36s779.jpg" alt="First-person view of hands connecting a vehicle door wiring module" width="1600" height="900" fetchpriority="high">
+      <img src="assets/hero_robot.png" alt="Industrial robotic arm" width="1179" height="1334" fetchpriority="high">
     </div>
   </div>
 </header>
@@ -381,7 +378,7 @@ footer .fine{width:100%;text-align:center;margin-top:50px;font-size:13px;opacity
   <div class="wrap">
     <h2>Your Models Need the <span class="it">Real World</span></h2>
     <p>Tell us what you need and we'll scope a focused pilot capture.</p>
-    <a class="btn" href="mailto:contact@monocorp.io">Get a Sample</a>
+    <a class="btn" href="https://docs.google.com/spreadsheets/d/1h-t-jSvczw0DinuoEKMpOfGeNjolZ3thMDTMM8MpgTs/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Get a Sample</a>
   </div>
 </section>
 
