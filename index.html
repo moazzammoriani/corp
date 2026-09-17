@@ -103,6 +103,7 @@ nav .btn{padding:10px 24px;font-size:17px;line-height:20px}
 .hero .figure{
   margin:0;width:min(100%,480px);justify-self:end;
 }
+.hero .figure picture{display:block;width:100%;height:100%}
 .hero .figure img{display:block;width:100%;height:auto;max-height:680px;object-fit:contain}
 @media(max-width:900px){
   .hero{
@@ -266,7 +267,11 @@ footer .fine{width:100%;text-align:center;margin-top:50px;font-size:13px;opacity
       <h1>The <span class="it">sensing</span> and <span class="it">data</span> layer for <span class="it">Physical AI</span></h1>
     </div>
     <div class="figure">
-      <img src="assets/hero_robot.png" alt="Industrial robotic arm" width="1179" height="1334" fetchpriority="high">
+      <picture>
+        <source media="(max-width:560px)" type="image/webp" srcset="assets/hero_robot-640.webp">
+        <source type="image/webp" srcset="assets/hero_robot-1180.webp">
+        <img src="assets/hero_robot-fallback.png" alt="Industrial robotic arm" width="707" height="800" fetchpriority="high" decoding="async">
+      </picture>
     </div>
   </div>
 </header>
