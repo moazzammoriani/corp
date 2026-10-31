@@ -37,9 +37,10 @@ h3{font-size:28px;font-weight:500;line-height:1.2;color:var(--ink)}
 p{font-size:20px;font-weight:400;letter-spacing:.5px;line-height:30px;color:var(--ink);max-width:56ch}
 .serif,.it{font-family:'STIX Two Text',serif;font-style:italic;font-weight:300}
 a{color:inherit}
-section{padding:90px 5%;position:relative}
+section{padding:76px 5%;position:relative}
 .wrap{max-width:960px;margin:0 auto;position:relative}
 .wrap.narrow{max-width:720px}
+#what,#expect,#faq{scroll-margin-top:110px}
 
 /* hairlines — indigo blueprint lines */
 .hline,.vline{position:absolute;background:var(--indigo);border-radius:20px;opacity:.55}
@@ -96,7 +97,7 @@ nav .btn{padding:10px 24px;font-size:17px;line-height:20px}
 .btn.on-dark{background:#fff;color:var(--ink);border-color:#fff}
 
 /* hero */
-.hero{min-height:92vh;display:flex;align-items:center;text-align:left;padding:140px 5% 90px}
+.hero{min-height:88vh;display:flex;align-items:center;text-align:left;padding:126px 5% 64px}
 .hero .wrap{width:100%;display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center}
 .hero h1{margin-bottom:34px}
 .hero p{margin:0 0 44px;max-width:46ch}
@@ -130,7 +131,7 @@ nav .btn{padding:10px 24px;font-size:17px;line-height:20px}
 }
 
 /* marquee */
-.marquee-zone{padding:44px 0 90px;overflow:hidden;position:relative}
+.marquee-zone{padding:26px 0 64px;overflow:hidden;position:relative}
 .marquee{display:flex;gap:20px;width:max-content;animation:scroll 40s linear infinite}
 .marquee:hover{animation-play-state:paused}
 @keyframes scroll{to{transform:translateX(-50%)}}
@@ -143,38 +144,42 @@ nav .btn{padding:10px 24px;font-size:17px;line-height:20px}
 .mcard .name{font-size:21px;font-weight:700;letter-spacing:-.3px;line-height:28px}
 .mcard .desc{font-size:14px;line-height:20px;opacity:.65;letter-spacing:0}
 
-/* field footage */
-.field-gallery{padding:38px 5% 100px}
-.field-gallery .wrap{max-width:1120px}
-.gallery-group + .gallery-group{margin-top:46px}
-.gallery-label{
-  margin-bottom:14px;color:var(--indigo);
-  font-size:13px;font-weight:700;letter-spacing:.12em;line-height:1.2;
+/* capture categories */
+.category-index{padding:22px 5% 48px}
+.category-index .wrap{max-width:1120px}
+.category-table{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  list-style:none;border-top:1px solid rgba(33,31,84,.48);
+  border-bottom:1px solid rgba(33,31,84,.48);
 }
-.gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-.gallery-frame{
-  margin:0;aspect-ratio:16/9;overflow:hidden;border-radius:8px;
-  background:#e4e7e8;
+.category-table li{
+  min-height:68px;padding:16px 22px;
+  display:flex;align-items:center;
+  border-bottom:1px solid rgba(33,31,84,.28);
+  font-size:21px;font-weight:500;line-height:28px;
 }
-.gallery-frame img{
-  display:block;width:100%;height:100%;object-fit:cover;
-  transition:transform .35s ease;
-}
-.gallery-frame:hover img{transform:scale(1.025)}
+.category-table li:nth-child(odd){border-right:1px solid rgba(33,31,84,.28)}
+.category-table li:nth-last-child(-n+2){border-bottom:0}
 
 /* text sections */
 .statement p{font-size:20px;margin-bottom:26px}
-.statement h2{margin-bottom:44px;max-width:24ch}
+.statement h2{margin-bottom:30px;max-width:24ch}
+
+/* capture intro */
+.capture-intro{padding-bottom:0}
+.capture-intro p{margin-top:20px}
 
 /* expect */
 .expect .wrap{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start;max-width:960px}
 .expect h2{position:sticky;top:120px}
-.expect .item{padding:34px 0;position:relative}
+.expect .item{padding:30px 0;position:relative}
+.expect .item:first-child{padding-top:8px}
+.expect .item:last-child{padding-bottom:8px}
 .expect .item + .item::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:var(--indigo);opacity:.45;border-radius:20px}
 .expect .item p{font-size:20px}
 
 /* who — dark band */
-.who{background:var(--ink);color:var(--bg);border-radius:32px;margin:0 5%;padding:90px 6%}
+.who{background:var(--ink);color:var(--bg);border-radius:32px;margin:0 5%;padding:80px 6%}
 .who h2{color:var(--bg)}
 .who p{color:var(--bg)}
 .who .rows{margin-top:44px}
@@ -183,14 +188,14 @@ nav .btn{padding:10px 24px;font-size:17px;line-height:20px}
 .who .row .it{opacity:.95}
 
 /* cards — clients / testimonials */
-.cards3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:44px}
+.cards3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:36px}
 .pcard{background:var(--white);border-radius:20px;padding:34px 30px 38px}
 .pcard h3{font-size:24px;margin-bottom:14px}
 .pcard p{font-size:16px;line-height:25px;letter-spacing:.3px;opacity:.85}
 
 /* faq */
 .faq .wrap{max-width:960px}
-.faq h2{margin-bottom:44px}
+.faq h2{margin-bottom:36px}
 .faq details{border-top:1px solid rgba(33,31,84,.4)}
 .faq details:last-of-type{border-bottom:1px solid rgba(33,31,84,.4)}
 .faq summary{
@@ -204,12 +209,12 @@ nav .btn{padding:10px 24px;font-size:17px;line-height:20px}
 .faq details p{padding:0 4px 30px;font-size:18px;line-height:28px}
 
 /* cta */
-.cta{text-align:center;padding:90px 5%}
+.cta{text-align:center;padding:76px 5%}
 .cta h2{margin:0 auto 26px;max-width:18ch}
 .cta p{margin:0 auto 44px}
 
 /* footer */
-footer{padding:90px 5% 40px;background:var(--bg)}
+footer{padding:76px 5% 40px;background:var(--bg)}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:40px;border-top:1px solid rgba(33,31,84,.4);padding-top:50px;max-width:960px}
 footer .sig{font-size:20px;font-weight:800;margin-bottom:10px}
 footer p{font-size:15px;line-height:23px;letter-spacing:.3px}
@@ -226,18 +231,21 @@ footer .fine{width:100%;text-align:center;margin-top:50px;font-size:13px;opacity
 @media(max-width:760px){
   nav{gap:16px;padding:8px 10px}
   nav a:not(.btn):not(.main){display:none}
-  .expect .wrap{grid-template-columns:1fr}
+  .expect .wrap{grid-template-columns:1fr;gap:30px}
   .expect h2{position:static}
   .who{margin:0 3%;padding:70px 7%}
-  section{padding:60px 6%}
-  .marquee-zone{padding:34px 0 60px}
-  .field-gallery{padding:28px 6% 66px}
-  .gallery-group + .gallery-group{margin-top:34px}
-  .gallery-grid{grid-template-columns:1fr;gap:12px}
-}
-@media(min-width:761px) and (max-width:900px){
-  .gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .gallery-frame:last-child:nth-child(odd){grid-column:span 2}
+  section{padding:52px 6%}
+  .statement h2{margin-bottom:24px}
+  .capture-intro p{margin-top:16px}
+  .marquee-zone{padding:20px 0 48px}
+  .category-index{padding:18px 6% 44px}
+  .category-table{grid-template-columns:1fr}
+  .category-table li{min-height:0;padding:15px 4px;font-size:19px;line-height:26px}
+  .category-table li:nth-child(odd){border-right:0}
+  .category-table li:nth-last-child(2){border-bottom:1px solid rgba(33,31,84,.28)}
+  .cta{padding:60px 6%}
+  footer{padding:60px 6% 32px}
+  footer .wrap{gap:32px;padding-top:38px}
 }
 </style>
 </head>
@@ -280,52 +288,36 @@ footer .fine{width:100%;text-align:center;margin-top:50px;font-size:13px;opacity
   <div class="wrap narrow">
     <h2>Monocorp exists to <span class="it">Feed embodied AI</span> With the real world</h2>
     <p>Foundation models for robots are starving for data. The internet has trillions of words but almost no first-person footage of someone folding laundry or using a drill the way people actually do.</p>
-    <p>So we <span class="it">put a field team on the ground</span> and fit participating workers with compact rigs. They repair, assemble, make and move things like they do every day, and the cameras catch the work from their point of view.</p>
-    <p>You can think of us as "staffing agency" meets "data pipeline".</p>
   </div>
 </section>
 
-<section id="what" style="padding-bottom:0">
+<section class="capture-intro" id="what">
   <div class="wrap narrow">
     <h2>Capture <span class="it">Every kind</span> of Motion</h2>
-    <p style="margin-top:26px">We take on anything from a single scripted scenario to longer capture programs across multiple sites. If a human can do it, we can film it.</p>
+    <p>We take on anything from a single scripted scenario to longer capture programs across multiple sites. If a human can do it, we can film it.</p>
   </div>
 </section>
 
-<section class="field-gallery" aria-label="Examples of field capture">
+<section class="category-index" aria-label="Capture categories">
   <div class="wrap">
-    <div class="gallery-group">
-      <p class="gallery-label">Auto Service</p>
-      <div class="gallery-grid">
-        <figure class="gallery-frame"><img src="assets/vlcsnap-2026-07-10-17h47m55s581.jpg" alt="Hands holding a vehicle electrical module beside an open car" width="1600" height="900" loading="lazy" decoding="async"></figure>
-        <figure class="gallery-frame"><img src="assets/vlcsnap-2026-07-10-17h52m07s163.jpg" alt="First-person view of hands carrying two tires beside a vehicle" width="1600" height="900" loading="lazy" decoding="async"></figure>
-        <figure class="gallery-frame"><img src="assets/vlcsnap-2026-07-10-17h53m30s353.jpg" alt="Hands fitting a tire onto a rim at a tire machine" width="1600" height="900" loading="lazy" decoding="async"></figure>
-      </div>
-    </div>
-    <div class="gallery-group">
-      <p class="gallery-label">Garment Work</p>
-      <div class="gallery-grid">
-        <figure class="gallery-frame"><img src="assets/vlcsnap-2026-07-10-17h57m38s248.jpg" alt="A worker guiding patterned fabric through an industrial sewing machine" width="1600" height="900" loading="lazy" decoding="async"></figure>
-        <figure class="gallery-frame"><img src="assets/vlcsnap-2026-07-10-17h59m49s573.jpg" alt="Hands guiding fabric beneath a sewing machine needle" width="1600" height="900" loading="lazy" decoding="async"></figure>
-        <figure class="gallery-frame"><img src="assets/vlcsnap-2026-07-10-18h05m16s804.jpg" alt="Close first-person view of hands stitching white fabric at a sewing machine" width="1600" height="900" loading="lazy" decoding="async"></figure>
-      </div>
-    </div>
-    <div class="gallery-group">
-      <p class="gallery-label">Home Appliance Repair</p>
-      <div class="gallery-grid">
-        <figure class="gallery-frame"><img src="assets/electronics-repair-01.jpg" alt="First-person view of a technician testing a circuit board with a multimeter" width="1600" height="900" loading="lazy" decoding="async"></figure>
-        <figure class="gallery-frame"><img src="assets/electronics-repair-02.jpg" alt="Hands probing components on a television circuit board" width="1600" height="900" loading="lazy" decoding="async"></figure>
-        <figure class="gallery-frame"><img src="assets/electronics-repair-03.jpg" alt="A technician testing an exposed game console circuit board" width="1600" height="900" loading="lazy" decoding="async"></figure>
-      </div>
-    </div>
-    <div class="gallery-group">
-      <p class="gallery-label">Phone Repair</p>
-      <div class="gallery-grid">
-        <figure class="gallery-frame"><img src="assets/electronics-repair-04.jpg" alt="Hands opening a smartphone at an electronics repair bench" width="1600" height="900" loading="lazy" decoding="async"></figure>
-        <figure class="gallery-frame"><img src="assets/electronics-repair-05.jpg" alt="Hands reconnecting a camera module inside a smartphone" width="1600" height="900" loading="lazy" decoding="async"></figure>
-        <figure class="gallery-frame"><img src="assets/electronics-repair-06.jpg" alt="A technician reassembling a smartphone frame" width="1600" height="900" loading="lazy" decoding="async"></figure>
-      </div>
-    </div>
+    <ul class="category-table">
+      <li>Electronics and Device Repair</li>
+      <li>Precision Assembly</li>
+      <li>Textiles, Leather and Soft Materials</li>
+      <li>Metalwork and Fabrication</li>
+      <li>Woodwork, Crafts and Finishing</li>
+      <li>Automotive</li>
+      <li>Factory and Assembly Lines</li>
+      <li>Kitchen and Food</li>
+      <li>Home and Household</li>
+      <li>Warehouse, Logistics and Retail</li>
+      <li>Waste Sorting and Recycling</li>
+      <li>Daily Life and Errands</li>
+      <li>Hospitality and Commercial Cleaning</li>
+      <li>Building Trades and Field Service</li>
+      <li>Agriculture and Outdoor Work</li>
+      <li>Personal Services</li>
+    </ul>
   </div>
 </section>
 
